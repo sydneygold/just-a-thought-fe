@@ -1,38 +1,44 @@
-.App {
-  text-align: center;
+.header-banner {
+  background-image: linear-gradient(to bottom, rgba(254,217,58,0.4) 0%,rgba(107,45,92,0.8) 100%), url('https://i.pinimg.com/originals/2d/58/d2/2d58d279b49bd19e1bfec0b2ab84d8f2.png');
+  background-blend-mode: hard-light;
+  color: rgb(14,25,39);
+  height: 300px;
+  font-family: 'Poiret One', cursive;
+  font-weight: normal;
+  font-size: 1.4em;
+  line-height: 1em;
+  padding: 19px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  font-size: 2em;
+}
+.second-header {
+  font-family: 'Poiret One', cursive;
+  margin-left: 2em;
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.entry-card {
+  margin: 5px;
+  padding: 1em;
+  height: 40em;
+  margin: 14px;
+  padding: 1em;
+  height: 40em;
+  background: linear-gradient(to bottom, rgba(288,143,198,0.4) 0%,rgba(255,255,255,0.9) 38%);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.entry-text {
+  margin-top: 2em;
+}
+
+.journal {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  overflow-x: scroll;
+  margin: 25px;
+  height: 57em;
+  background-image: linear-gradient(to bottom, rgba(254,217,58,0.4) 0%,rgba(107,45,92,0.8) 100%), url('https://paradise-rpg.pl/uploads/monthly_2017_11/chuj.gif.f4d1f141df9b6491dc17746a6316a65d.gif');
+  background-position: bottom;
+  background-blend-mode: hard-light;
 }
