@@ -11,6 +11,19 @@ export default class NewEntryForm extends Component {
 
     state = initialState
 
+    componentDidMount(){
+        const {entry} = this.props
+        if(this.props.entry){
+            const {id, title, content, image} = entry
+            this.setState({
+                id,
+                title,
+                content,
+                image
+            })
+        }
+    }
+
     handleChange = (event) => {
         let {name, value} = event.target
 
@@ -19,23 +32,33 @@ export default class NewEntryForm extends Component {
         })
     }
 
-    // handleImage = (event) => {
-    //     let {value} = event.target
-    //     let newValue = value.split("/")
-    //     console.log(newValue)
-    //     return newValue
-    // }
-
     handleSubmit = (event) => {
-        event.preventDefault()
-        this.props.addEntry(this.state)
+        this.props.submitAction(this.state)
+        if(this.props.handleToggle){
+            this.props.handleToggle()
+        }
+    }
+
+    returnButton = () => {
+        this.props.handleToggle()
+    }
+
+    ifEditForm = () => {
+        return (
+            <div>
+                <h2>Need to make some changes?</h2> 
+                <Button variant="light" onClick={this.returnButton}>↩</Button>
+            </div>
+        )
     }
 
     render(){
-        const {title, content, image} = this.state
+        const {title, content} = this.state
         return (
             <div className="form-container">
-                <h2>Write Your Thoughts Down!</h2>
+                {this.props.entry 
+                    ? this.ifEditForm()
+                    : <h2>Write Your Thoughts Down!</h2>}
                 <Form className="create-form" onSubmit={this.handleSubmit}>
                     <Form.Group controlId="entryTitle">
                         <Form.Label>Title</Form.Label>

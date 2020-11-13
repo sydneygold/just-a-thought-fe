@@ -2,7 +2,7 @@
   background-image: linear-gradient(to bottom, rgba(254,217,58,0.4) 0%,rgba(107,45,92,0.8) 100%), url('https://i.pinimg.com/originals/2d/58/d2/2d58d279b49bd19e1bfec0b2ab84d8f2.png');
   background-blend-mode: hard-light;
   color:rgb(26,46,71);
-  height: 300px;
+  height: 260px;
   font-family: 'Poiret One', cursive;
   font-weight: normal;
   font-size: 1.4em;
@@ -16,6 +16,7 @@ h1 {
 .second-header {
   font-family: 'Poiret One', cursive;
   margin-left: 2em;
+  margin-top: -1em;
 }
 
 .entry-card {
@@ -30,9 +31,21 @@ h1 {
   border-radius: 7px 7px 7px 7px;
 }
 
+.edit-form {
+  margin: 5px;
+  padding: 1em;
+  height: 37em;
+  margin: 14px;
+  padding: 1em;
+  height: 40em;
+  background: linear-gradient(to bottom, rgba(288,143,198,0.4) 0%,rgba(255,255,255,0.9) 38%);
+  font-family: 'Inconsolata', monospace;
+  border-radius: 7px 7px 7px 7px;
+}
+
 .entry-header {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   font-family: 'Poiret One', cursive;
   margin: 10px;
 }
@@ -55,7 +68,7 @@ h1 {
 .journal {
   display: flex;
   overflow-x: scroll;
-  margin-top: 35px;
+  margin-top: 15px;
   height: 57em;
   background-image: linear-gradient(to bottom, rgba(254,217,58,0.4) 0%,rgba(107,45,92,0.8) 100%), url('https://paradise-rpg.pl/uploads/monthly_2017_11/chuj.gif.f4d1f141df9b6491dc17746a6316a65d.gif');
   background-position: bottom;
@@ -63,11 +76,9 @@ h1 {
 }
 
 .form-container {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
   margin: 1em;
   padding: 1em;
+  height: fit-content;
   font-family: 'Poiret One', cursive;
 }
 
@@ -85,12 +96,9 @@ h1 {
 
 .input-title {
   width: 500px;
-  z-index: 1;
 }
 
 .input-content {
   display: flex;
   height: 300px;
-  z-index: 1;
-  
 }

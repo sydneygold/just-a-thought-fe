@@ -9,7 +9,7 @@ const baseUrl = 'http://localhost:3000/entries'
 export default class App extends Component {
 
   state = {
-    entries: []
+    entries: [],
   }
 
   componentDidMount(){
@@ -24,7 +24,7 @@ export default class App extends Component {
 
   addEntry = (newEntry) => {
     this.setState({
-      entries: [...this.state.entries, newEntry]
+      entries: [...this.state.entries, newEntry],
     })
     fetch(baseUrl, {
       method: 'POST',
@@ -34,11 +34,28 @@ export default class App extends Component {
     })
   }
 
-  // updateEntry = (updatedEntry) => {
-  //   let entries = this.state.entries.map(entry => entry.id === updatedEntry.id ? updatedEntry : entry)
+  updateEntry = (updatedEntry) => {
+    let entries = this.state.entries.map(entry => entry.id === updatedEntry.id ? updatedEntry : entry)
 
-  //   this.setState({entries})
-  // }
+    this.setState({entries})
+    fetch(baseUrl + "/" + updatedEntry.id, {
+      method: "PATCH",
+      headers: {"Content-Type": "application/json"
+    },
+    body: JSON.stringify({entry: updatedEntry})
+    })
+  }
+
+  deleteEntry = (id) => {
+    let filteredEntries = this.state.entries.filter(entry => {
+      return entry.id !== id
+    })
+    this.setState({
+      entries: filteredEntries
+    })
+    console.log(id)
+    fetch(baseUrl + "/" + id, {method: 'DELETE'})
+  }
 
   render(){
     return (
@@ -54,6 +71,7 @@ export default class App extends Component {
       <Journal 
         entries={this.state.entries} 
         updateEntry={this.updateEntry}
+        deleteEntry={this.deleteEntry}
       />
       <NewEntryForm addEntry={this.addEntry}/>
     </div>
