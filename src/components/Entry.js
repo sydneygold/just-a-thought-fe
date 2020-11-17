@@ -32,8 +32,9 @@ export default function Entry({entry, deleteEntry, updateEntry}) {
     const formCard = () => {
         return (
             <div>
-                <Card className="entry-card">
+                <Card>
                     <NewEntryForm 
+                        className="edit-form"
                         entry={entry} 
                         submitAction={updateEntry}
                         handleToggle={handleToggle}
